@@ -32,12 +32,12 @@ Result
 ./test --help
 #### Definied Arguments ####
 --help  | Prints the help screen
---echo, -e <arg> | Prints a message to the screen
+--echo, -e <value> | Prints a message to the screen
 
 ./test
 #### Definied Arguments ####
 --help  | Prints the help screen
---echo, -e <arg> | Prints a message to the screen
+--echo, -e <value> | Prints a message to the screen
 
 ./test --echo "Hello world"
 Hello world
