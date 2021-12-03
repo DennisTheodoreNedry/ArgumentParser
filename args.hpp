@@ -43,7 +43,7 @@ private:
 public:
   void addArgument(std::string, std::string, bool, std::string); // For when you have a longer version and a smaller
   void addArgument(std::string, bool, std::string); // Only for smaller versions
-  void parseArgs(int, char**); // Checks which arguments that has actually been typed and raises an error if a undeclared one is found
+  void parseArgs(unsigned int, char**); // Checks which arguments that has actually been typed and raises an error if a undeclared one is found
   bool checkArg(std::string); // Checks if the passed argument has been set or not, returns true if thats the case
   std::string getValue(std::string); // Prints the contents of the passed argument
   void help(); // Prints the help screen
@@ -70,7 +70,7 @@ void arg::help(){
   }
 }
 
-void arg::parseArgs(int argc, char** argv){
+void arg::parseArgs(unsigned int argc, char** argv){
   bool foundArg = false;
   for (unsigned int i = 1; i < argc; i++){
     foundArg = false;
