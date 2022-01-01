@@ -1,9 +1,4 @@
 # ArgumentParser
-A simpel argument parser for C++
-
-Written for my own projects, but felt that it might have a home here.
-
-
 
 The argument parser consists out of 6 functions which are easy to use, take a look at the example below to get a good look at it.
 
