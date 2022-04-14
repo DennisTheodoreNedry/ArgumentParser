@@ -99,6 +99,15 @@ func Argument_help() {
 		if defined_arguments[id].argument_required {
 			fmt.Print(" <value> ")
 		}
-		fmt.Println(" | " + defined_arguments[id].desc)
+		fmt.Print(" | " + defined_arguments[id].desc + " | ")
+
+		if len(defined_arguments[id].options) > 0 { // There were some predefined options defined
+			options := "["
+			for _, opt := range defined_arguments[id].options {
+				options += opt + ", "
+			}
+			options = options[0:len(options)-1] + "]" // Removes the last piece which is a ',' and adds the last ']'
+			fmt.Println(options)
+		}
 	}
 }
