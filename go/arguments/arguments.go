@@ -102,7 +102,7 @@ func Argument_help() {
 		fmt.Print(" | " + defined_arguments[id].desc + " | ")
 
 		if len(defined_arguments[id].options) > 0 { // There were some predefined options defined
-			options := "["
+			options := "options are ["
 			for _, opt := range defined_arguments[id].options {
 				options += opt + ", "
 			}
