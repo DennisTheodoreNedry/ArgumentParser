@@ -94,20 +94,23 @@ func Argument_help() {
 	// Prints all defined arguments
 	fmt.Println("#### Definied Arguments ####")
 	for id := 0; id < len(defined_arguments); id++ {
-		fmt.Print(defined_arguments[id].longName + ", " + defined_arguments[id].shortName)
+		value := defined_arguments[id].longName + ", " + defined_arguments[id].shortName
 
 		if defined_arguments[id].argument_required {
-			fmt.Print(" <value> ")
+			value += " <value> "
 		}
-		fmt.Print(" | " + defined_arguments[id].desc + " | ")
+		value += " | " + defined_arguments[id].desc
 
 		if len(defined_arguments[id].options) > 0 { // There were some predefined options defined
-			options := "options are ["
+			options := " | options are ["
 			for _, opt := range defined_arguments[id].options {
-				options += opt + ", "
+				if opt != "NULL" {
+					options += opt + ", "
+				}
 			}
 			options = options[0:len(options)-len(",")] + "]" // Removes the last piece which is a ',' and adds the last ']'
-			fmt.Println(options)
+			value += options
 		}
+		fmt.Println(value)
 	}
 }
