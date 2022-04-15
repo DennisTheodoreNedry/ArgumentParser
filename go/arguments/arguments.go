@@ -103,13 +103,22 @@ func Argument_help() {
 
 		if len(defined_arguments[id].options) > 0 { // There were some predefined options defined
 			options := " | options are ["
-			for _, opt := range defined_arguments[id].options {
+			contains_options := false
+			for i, opt := range defined_arguments[id].options {
+
 				if opt != "NULL" {
-					options += opt + ", "
+					options += opt
+					if i+1 < len(defined_arguments[id].options) {
+						options += ", "
+					}
+					contains_options = true
+
 				}
 			}
-			options = options[0:len(options)-len(",")] + "]" // Removes the last piece which is a ',' and adds the last ']'
-			value += options
+			options += "]" // Removes the last piece which is a ',' and adds the last ']'
+			if contains_options {
+				value += options
+			}
 		}
 		fmt.Println(value)
 	}
