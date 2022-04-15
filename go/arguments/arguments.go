@@ -106,7 +106,7 @@ func Argument_help() {
 			for _, opt := range defined_arguments[id].options {
 				options += opt + ", "
 			}
-			options = options[0:len(options)-1] + "]" // Removes the last piece which is a ',' and adds the last ']'
+			options = options[0:len(options)-len(",")] + "]" // Removes the last piece which is a ',' and adds the last ']'
 			fmt.Println(options)
 		}
 	}
