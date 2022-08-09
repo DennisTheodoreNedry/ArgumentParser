@@ -29,10 +29,13 @@ func Argument_parse() {
 		found := false
 		for j, def_arg := range defined_arguments {
 			if os.Args[i] == def_arg.longName || os.Args[i] == def_arg.shortName {
+
 				if def_arg.argument_required && i+1 > len(os.Args[1:]) {
 					notify.Error("The argument "+os.Args[i]+" needs an argument to work!", "arguments.argument_parse()")
+
 				} else if def_arg.argument_required {
 					possible_options := false
+
 					for _, opt := range def_arg.options {
 						if opt == os.Args[i+1] || opt == "NULL" {
 							defined_arguments[j].argument_value = os.Args[i+1] // Save the value
@@ -40,7 +43,9 @@ func Argument_parse() {
 							possible_options = true
 							break
 						}
+
 					}
+
 					if !possible_options {
 						notify_error_msg := "Unknown options " + os.Args[i+1] + " to argument " + os.Args[i] + ", possible options are ["
 						for i, option := range def_arg.options {
@@ -61,7 +66,11 @@ func Argument_parse() {
 			}
 		}
 		if !found {
-			notify.Error("The argument "+os.Args[i]+" was not defined!", "arguments.argument_parse()")
+			if os.Args[i] == "-h" || os.Args[i] == "--help" {
+				Argument_help()
+			} else {
+				notify.Error("The argument "+os.Args[i]+" was not defined!", "arguments.argument_parse()")
+			}
 		}
 	}
 }
