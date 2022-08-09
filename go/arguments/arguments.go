@@ -49,7 +49,7 @@ func Argument_parse() map[string]string {
 
 				if def_arg.argument_required {
 					if i+1 > len(os.Args[1:]) {
-						notify.Error(fmt.Sprintf("The argument %s needs an argument to work!", "arguments.argument_parse()", i_arg))
+						notify.Error(fmt.Sprintf("The argument %s needs an argument to work!", "arguments.argument_parse()", i_arg), "arguments.argument_parse()")
 					}
 
 					possible_options := false
