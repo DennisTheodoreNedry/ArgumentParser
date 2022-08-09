@@ -157,4 +157,6 @@ func Argument_help() {
 
 		fmt.Println(value)
 	}
+
+	os.Exit(0)
 }
