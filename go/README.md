@@ -11,63 +11,60 @@ The following is how a `main` function could look like
 package main
 
 import (
-	"fmt"
-	"os"
-
 	arg "github.com/s9rA16Bf4/ArgumentParser/go/arguments"
-	"github.com/s9rA16Bf4/go-evil/utility/notify"
+	patcher "github.com/s9rA16Bf4/No_CD_Cracks/Jurassic_Park_Trespasser/utility/patcher"
+	"github.com/s9rA16Bf4/notify_handler/go/notify"
 )
 
 func main() {
+	arg.Argument_add("--help", "-h", false, "Shows all available arguments and their purpose")
+	arg.Argument_add("--exe", "-x", true, "Path to Trespasser exe [REQUIRED]")
+	arg.Argument_add("--smks", "-s", true, "Path to a folder containing the four smk's [REQUIRED]")
+	arg.Argument_add("--levels", "-l", true, "Path to all the different levels and other materials [REQUIRED]")
+	parsed_flags := arg.Argument_parse()
 
-	arg.Argument_add("--help", "-h", false, "Shows all available arguments and their purpose", []string{"NULL"})
-	arg.Argument_add("--verbose", "-v", true, "How verbose should the program be, options are [1,2,3]", []string{"0", "1", "2", "3"})
-	arg.Argument_add("--debug", "-d", true, "Debug iptions, options are [false, true]", []string{"false", "true"})
-	arg.Argument_add("--echo", "-e", true, "Echos the provided value in the console", []string{"NULL"})
+	if len(parsed_flags) > 0 {
+		var path_to_exe string
+		var path_to_smks string
+		var path_to_lvl string
 
-	arg.Argument_parse() // Lets check what the user entered
-
-	if len(os.Args[0:]) > 1 { // The user entered something
-		if arg.Argument_check("-h") {
-			arg.Argument_help()
+		if value, entered := parsed_flags["-x"]; entered { // Patch exe
+			path_to_exe = value
 		} else {
-			if arg.Argument_check("-v") {
-				notify.Verbose_lvl = arg.Argument_get("-v")
-				notify.Notify_log("Setting verbose level to "+notify.Verbose_lvl, notify.Verbose_lvl, "1")
-			}
-
-			if arg.Argument_check("-d") {
-				if arg.Argument_get("-d") == "true" {
-					// set debug true here
-				}
-			}
-			if arg.Argument_check("-e") {
-				fmt.Println(arg.Argument_get("-e"))
-			}
+			notify.Error("No exe file was provided", "main.main()")
 		}
+
+		if value, entered := parsed_flags["-s"]; entered { // Patch exe
+			path_to_smks = value
+		} else {
+			notify.Error("No folder was provided", "main.main()")
+		}
+
+		if value, entered := parsed_flags["-l"]; entered {
+			path_to_lvl = value
+		} else {
+			notify.Error("Levels were not provided", "main.main()")
+		}
+
+		patcher.Begin_patch(path_to_exe, path_to_smks, path_to_lvl)
+
 	} else {
-		notify.Notify_error("No argument was provided, run '--help'/'-h' to have a look at the arguments available", "main.main()")
+		notify.Error("No argument was provided, run '--help'/'-h' to have a look at the arguments available", "main.main()")
 	}
 }
 
 ```
 Result
 ```
-./test --help
+./trespasser_patcher.exe -h
 #### Definied Arguments ####
---help, -h | Shows all available arguments and their purpose
---verbose, -v <value>  | How verbose should the program be, options are [1,2,3]
---debug, -d <value>  | Debug iptions, options are [false, true]
---echo, -e <value>  | Echos the provided value in the console
+--exe, -x <value>  | Path to Trespasser exe [REQUIRED]
+--smks, -s <value>  | Path to a folder containing the four smk's [REQUIRED]
+--levels, -l <value>  | Path to all the different levels and other materials [REQUIRED]
 
-./test
+./trespasser_patcher.exe
 #### Error ####
-msg: No argument was provided, run '--help'/'-h' to have a look at the arguments available
+msg: No exe file was provided
 where: main.main()
 
-./test --echo "Hello world"
-Hello world
-
-./test -e "Hello world"
-Hello world
 ```
