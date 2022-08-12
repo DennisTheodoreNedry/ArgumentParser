@@ -56,7 +56,7 @@ func Argument_parse() map[string]string {
 					i_value := os.Args[i+1] // The input value
 
 					for _, opt := range def_arg.options {
-						if opt == i_value || opt == "NULL" {
+						if opt == i_value {
 							defined_arguments[j].argument_value = i_value // Save the value (deprecated)
 							// I believe the j variable becomes totally deprecated with the new way of handling
 
@@ -81,6 +81,8 @@ func Argument_parse() map[string]string {
 						notify.Error(notify_error_msg, "arguments.argument_parse()")
 					}
 
+				} else { // The argument was called but it doesn't require anything to work
+					toReturn[i_arg] = ""
 				}
 
 				defined_arguments[j].set = true // (deprecated)
