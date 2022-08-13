@@ -49,7 +49,7 @@ func Argument_parse() map[string]string {
 
 				if def_arg.argument_required {
 					if i+1 > len(os.Args[1:]) {
-						notify.Error(fmt.Sprintf("The argument %s needs an argument to work!", "arguments.argument_parse()", i_arg), "arguments.argument_parse()")
+						notify.Error(fmt.Sprintf("The argument %s needs a value to work!", i_arg), "arguments.argument_parse()")
 					}
 
 					possible_options := false
@@ -60,7 +60,8 @@ func Argument_parse() map[string]string {
 							defined_arguments[j].argument_value = i_value // Save the value (deprecated)
 							// I believe the j variable becomes totally deprecated with the new way of handling
 
-							toReturn[i_arg] = i_value
+							toReturn[def_arg.longName] = i_value
+							toReturn[def_arg.shortName] = i_value
 
 							i += 1 // So that we skip one row
 							possible_options = true
