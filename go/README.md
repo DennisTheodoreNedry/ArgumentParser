@@ -17,7 +17,6 @@ import (
 )
 
 func main() {
-	arg.Argument_add("--help", "-h", false, "Shows all available arguments and their purpose")
 	arg.Argument_add("--exe", "-x", true, "Path to Trespasser exe [REQUIRED]")
 	arg.Argument_add("--smks", "-s", true, "Path to a folder containing the four smk's [REQUIRED]")
 	arg.Argument_add("--levels", "-l", true, "Path to all the different levels and other materials [REQUIRED]")
