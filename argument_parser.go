@@ -28,7 +28,7 @@ func Constructor() *ArgumentHandler {
 	var constructed ArgumentHandler
 
 	// Add default value
-	constructed.Add("--help", "-h", false, false, "Prints the help screen")
+	constructed.Add("--help", "-h", false, false, false, "Prints the help screen")
 
 	return &constructed
 }
