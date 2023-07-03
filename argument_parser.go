@@ -136,9 +136,9 @@ func (self *ArgumentHandler) Parse() map[string][]string {
 		// Prints an error and exits if the argument wasn't known
 		argument := self.isAnArgument(input_argument, true)
 		valueToArgument := []string{}
-
+		fmt.Println(argument.longName)
 		// Is the argument help?
-		if argument.longName == "--help" {
+		if argument != nil && argument.longName == "--help" {
 			self.help()
 		}
 
