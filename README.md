@@ -1,69 +1,57 @@
-# ArgumentParser
+# Argument Parser
 
-Compared to the cpp version of this project, the golang version is more advanced as you now can set expected values, and raise an error when those are not met.
+Simpel and effective argument parser, is like your average joe but comes with some nice perks compared to the previous version.
 
-The argument parser consists out of 5 functions which are easy to use, 
+Three methods of adding an argument to your program.
+| Function         | Description     | Constraints |
+|--------------|-----------|-----------|
+| `Add` | Basic function to add arguments | Can't automatically limit the the input with options, can't call a function on input. |
+| `AddOption` | Same as `Add` but requires a string array of possible options to enter  | Can't call a function on input. |
+| `AddFunction`| Executes a function when an argument is triggered | The function definition must be `func(string) string`, can't automatically limit the input. |
+
+Each argument function must atleast have the following information to work.
+| Variable         | Type     | Description |
+|--------------|-----------|-----------|
+| `long_name` | string | Long hand version of the argument, e.g. `--help` |
+| `short_name` | string  | Short hand version of the argument, e.g. `-h` |
+| `needs_value`| bool | Does the argument require a value if it's passed in? |
+| `required`| bool | Is the argument required for the program to work? |
+| `desc`| string | Argument description, e.g. `Sets the verbose level` |
 
 
-### Example
-The following is how a `main` function could look like
+## Help function
+There is a built in help function which is printed when `--help`/`-h` or `help/h` is passed.
 ```
-package main
-
-import (
-	arg "github.com/s9rA16Bf4/ArgumentParser/go/arguments"
-	patcher "github.com/s9rA16Bf4/No_CD_Cracks/Jurassic_Park_Trespasser/utility/patcher"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
-)
-
-func main() {
-	arg.Argument_add("--exe", "-x", true, "Path to Trespasser exe [REQUIRED]")
-	arg.Argument_add("--smks", "-s", true, "Path to a folder containing the four smk's [REQUIRED]")
-	arg.Argument_add("--levels", "-l", true, "Path to all the different levels and other materials [REQUIRED]")
-	parsed_flags := arg.Argument_parse()
-
-	if len(parsed_flags) > 0 {
-		var path_to_exe string
-		var path_to_smks string
-		var path_to_lvl string
-
-		if value, entered := parsed_flags["-x"]; entered { // Patch exe
-			path_to_exe = value
-		} else {
-			notify.Error("No exe file was provided", "main.main()")
-		}
-
-		if value, entered := parsed_flags["-s"]; entered { // Patch exe
-			path_to_smks = value
-		} else {
-			notify.Error("No folder was provided", "main.main()")
-		}
-
-		if value, entered := parsed_flags["-l"]; entered {
-			path_to_lvl = value
-		} else {
-			notify.Error("Levels were not provided", "main.main()")
-		}
-
-		patcher.Begin_patch(path_to_exe, path_to_smks, path_to_lvl)
-
-	} else {
-		notify.Error("No argument was provided, run '--help'/'-h' to have a look at the arguments available", "main.main()")
-	}
-}
-
-```
-Result
-```
-./trespasser_patcher.exe -h
 #### Definied Arguments ####
---exe, -x <value>  | Path to Trespasser exe [REQUIRED]
---smks, -s <value>  | Path to a folder containing the four smk's [REQUIRED]
---levels, -l <value>  | Path to all the different levels and other materials [REQUIRED]
+--help/-h | Prints a help screen with all arguments
+--test/-t | I'm a test
+--test2/-t2 <value>  | I am a required test | options are {1, 2, 3, 4} | REQUIRED
+--foo/-fo <value>  | I will peform a function call when entered
+```
 
-./trespasser_patcher.exe
-#### Error ####
-msg: No exe file was provided
-where: main.main()
+## To not or to not utilize dashes
+You get the option if you would like your arguments to utilize `--`/`-` or not. 
+This can be handled in the `Constructor` function by passing in `true/false` depending if you want it or not.
+
+## Return of parsed values
+After running `Parse()` a map of the format `map[string]string` is returned, the easiest way to access the value is by utilizing a combination of a for loop and switch case.
 
 ```
+for key, value := range parsed_result {
+		switch key {
+		case "test":
+			fmt.Println("Argument 'test' was entered")
+
+		case "test2":
+			fmt.Printf("Argument 'test2' was entered with value %s\n", value)
+
+		case "foo":
+			fmt.Printf("The function argument 'foo' returned %s\n", value)
+		}
+	}
+```
+
+<b>Note:</b> The map returned will contain entries of all entered arguments and will contain both the `long_name` and `short_name` versions of the argument.
+
+## Example
+An example of how you can utilize each function can be found under `example/main.go`.
