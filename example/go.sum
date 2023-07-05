@@ -4,6 +4,8 @@ github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230703195545-892e7beb6b10 h1:B3u/mF
 github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230703195545-892e7beb6b10/go.mod h1:NRKlnWNTdhYI+whq5u0Dx+pH/iE+NMGg/31yuWPHwaU=
 github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230703200331-663af22b4e56 h1:p0I9dDDjEWuIQJkHSMcU6cV/BMmnIape9nc569mfn6g=
 github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230703200331-663af22b4e56/go.mod h1:NRKlnWNTdhYI+whq5u0Dx+pH/iE+NMGg/31yuWPHwaU=
+github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230705205539-ac92103c804a h1:ebwN0mEFfinRadHGcqvd03NRpOHSOrxl6i73XIfiJOE=
+github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230705205539-ac92103c804a/go.mod h1:cU9/4EwpZygG4SkrlhC5Z+lGsN0UjBUXkkpFLilSLLk=
 github.com/s9rA16Bf4/Go-tools v0.0.0-20230703053354-3b6d460e1d98 h1:SWgJdyxhsmUV5ZbmVwsL/AL7mQMczIwAz0QCSr9kp6s=
 github.com/s9rA16Bf4/Go-tools v0.0.0-20230703053354-3b6d460e1d98/go.mod h1:RGG1PykHV2JOoO66p1SnMzRi7jbUfWLM9s2Vlx4RDiA=
 github.com/s9rA16Bf4/notify_handler v0.0.0-20220414214026-7cbc65f663ea h1:ENRxm6DdCRYiq2xVM+RHA6IPzXaeaqRa86+3l8jfpUk=
