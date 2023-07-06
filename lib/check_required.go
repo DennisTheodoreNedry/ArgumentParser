@@ -3,7 +3,7 @@ package lib
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Checks if any required argument was left out aka not called
@@ -23,7 +23,7 @@ func (handler *ArgumentHandler) checkRequired(keys []string) {
 		}
 
 		if !match {
-			notify.Error(fmt.Sprintf("Argument %s/%s is required but was not called", argument.long_name, argument.short_name), "argumentparser.checkRequired()")
+			notify.Error(fmt.Sprintf("Argument %s/%s is required but was not called", argument.long_name, argument.short_name), "argumentparser.checkRequired()", 1)
 		}
 
 	}
