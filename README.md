@@ -8,6 +8,7 @@ Three methods of adding an argument to your program.
 | `Add` | Basic function to add arguments | Can't automatically limit the the input with options, can't call a function on input. |
 | `AddOption` | Same as `Add` but requires a string array of possible options to enter  | Can't call a function on input. |
 | `AddFunction`| Executes a function when an argument is triggered | The function definition must be `func(string) string`, can't automatically limit the input. |
+| `AddFunctionOption`| Executes a function when an argument is triggered, but can limit the input | The function definition must be `func(string) string`. |
 
 Each argument function must atleast have the following information to work.
 | Variable         | Type     | Description |
