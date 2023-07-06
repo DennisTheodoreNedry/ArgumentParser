@@ -24,7 +24,7 @@ func main() {
 	handler.Add("test", "t", false, false, "I'm a test")
 	handler.AddOptions("test2", "t2", true, true, "I am a required test", []string{"1", "2", "3", "4"})
 	handler.AddFunction("foo", "fo", true, false, "I will peform a function call when entered", foo)
-	handler.AddFunctionOption("foo2", "fo2", true, false, "I will peform a function call when entered", foo2, []string{"1", "2", "3", "4"})
+	handler.AddFunctionOptions("foo2", "fo2", true, false, "I will peform a function call when entered", foo2, []string{"1", "2", "3", "4"})
 
 	// The function arg foo/fo will be executed during handler.Parse() if it's entered
 	parsed_result := handler.Parse()
