@@ -10,6 +10,10 @@ github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230705210108-5c39949c3e69 h1:Bfa0eG
 github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230705210108-5c39949c3e69/go.mod h1:cU9/4EwpZygG4SkrlhC5Z+lGsN0UjBUXkkpFLilSLLk=
 github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230706190234-04835f61866e h1:/219L4Rc56g06LmgxxD6l+Q5JhNgqJyJKc1YNC8rYZE=
 github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230706190234-04835f61866e/go.mod h1:Zwu+S/AXBejNKEkeOgHrux+zv0L78+Pg+auVCQzEnmE=
+github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230706191642-c652d751749e h1:Nh6zHi9zOVbGf2h9tVmVOqg0qy3rssOn4QLfez1g3fk=
+github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230706191642-c652d751749e/go.mod h1:Zwu+S/AXBejNKEkeOgHrux+zv0L78+Pg+auVCQzEnmE=
+github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230706195422-774a31258c77 h1:Hi3tHwg4CPo2hXXQ3/FJASl8GFUdkzC9Fl2F4zjS6qU=
+github.com/s9rA16Bf4/ArgumentParser v0.0.0-20230706195422-774a31258c77/go.mod h1:Zwu+S/AXBejNKEkeOgHrux+zv0L78+Pg+auVCQzEnmE=
 github.com/s9rA16Bf4/Go-tools v0.0.0-20230703053354-3b6d460e1d98 h1:SWgJdyxhsmUV5ZbmVwsL/AL7mQMczIwAz0QCSr9kp6s=
 github.com/s9rA16Bf4/Go-tools v0.0.0-20230703053354-3b6d460e1d98/go.mod h1:RGG1PykHV2JOoO66p1SnMzRi7jbUfWLM9s2Vlx4RDiA=
 github.com/s9rA16Bf4/Go-tools v0.0.0-20230706181801-762717eda163 h1:7gfT0qJtYLumVQJlydZTHoYwD6AEp7t66n1w4+hba4A=
@@ -18,5 +22,7 @@ github.com/s9rA16Bf4/notify_handler v0.0.0-20220414214026-7cbc65f663ea h1:ENRxm6
 github.com/s9rA16Bf4/notify_handler v0.0.0-20220414214026-7cbc65f663ea/go.mod h1:QNjxlxplV4bgRq0hMkD/ssRExdUmsuqql+lRh9afWgA=
 github.com/s9rA16Bf4/notify_handler v0.0.0-20230706181218-ead5290ab95f h1:jQF9IePKSodS8NfVFrIZCnwM/klp/Tg3micw1sklrjY=
 github.com/s9rA16Bf4/notify_handler v0.0.0-20230706181218-ead5290ab95f/go.mod h1:ylFsSqBcuOKbMkWRvO7V+qlP2w7Qfaw5BK+eEsx/JhE=
+github.com/s9rA16Bf4/notify_handler v0.0.0-20230706195623-e0ea1ff0eb48 h1:BfHAkVJiCdxXtDMQGg0smVtN/wuu8GmFguzxBCdq2P8=
+github.com/s9rA16Bf4/notify_handler v0.0.0-20230706195623-e0ea1ff0eb48/go.mod h1:ylFsSqBcuOKbMkWRvO7V+qlP2w7Qfaw5BK+eEsx/JhE=
 github.com/thanhpk/randstr v1.0.6 h1:psAOktJFD4vV9NEVb3qkhRSMvYh4ORRaj1+w/hn4B+o=
 github.com/thanhpk/randstr v1.0.6/go.mod h1:M/H2P1eNLZzlDwAzpkkkUvoyNNMbzRGhESZuEQk3r0U=
