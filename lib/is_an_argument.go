@@ -3,7 +3,7 @@ package lib
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Checks if the entered value is an argument
@@ -20,7 +20,7 @@ func (handler *ArgumentHandler) isAnArgument(value string, raiseOnError bool) *A
 
 	// Unknown command, print and exit
 	if raiseOnError && match == nil {
-		notify.Error(fmt.Sprintf("Found unknown argument '%s'", value), "argumentparser.isAnArgument()")
+		notify.Error(fmt.Sprintf("Found unknown argument '%s'", value), "argumentparser.isAnArgument()", 1)
 	}
 
 	return match
