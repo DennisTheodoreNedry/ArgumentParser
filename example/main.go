@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	argumentparser "github.com/s9rA16Bf4/ArgumentParser"
+	argumentparser "github.com/DennisTheodoreNedry/ArgumentParser"
 )
 
 func foo(value string) string {

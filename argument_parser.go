@@ -1,7 +1,7 @@
 package argumentparser
 
 import (
-	"github.com/s9rA16Bf4/ArgumentParser/lib"
+	"github.com/DennisTheodoreNedry/ArgumentParser/lib"
 )
 
 // Creates a handler and returns it

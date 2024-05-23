@@ -12,6 +12,6 @@ clean_binary:
 	-rm $(BIN)
 
 dependencies:
-	go get github.com/s9rA16Bf4/ArgumentParser
-	go get github.com/s9rA16Bf4/notify_handler
-	go get github.com/s9rA16Bf4/Go-tools
+	go get github.com/DennisTheodoreNedry/ArgumentParser
+	go get github.com/DennisTheodoreNedry/notify_handler
+	go get github.com/DennisTheodoreNedry/Go-tools

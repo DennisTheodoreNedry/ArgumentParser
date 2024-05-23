@@ -3,7 +3,7 @@ package lib
 import (
 	"fmt"
 
-	gotools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/DennisTheodoreNedry/Go-tools"
 )
 
 // Internal handler that all 'add' functions really depend on

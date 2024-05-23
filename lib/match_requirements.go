@@ -3,7 +3,7 @@ package lib
 import (
 	"fmt"
 
-	notify "github.com/s9rA16Bf4/notify_handler"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 // Check if the entered argument has everything it needs to work
